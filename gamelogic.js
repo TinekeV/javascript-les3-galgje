@@ -37,27 +37,18 @@ function isGameWon(word, guesses) {
 }
 
 function isGameLost(word, guesses) {
-  // DOEL FUNCTIE: "isGameLost should return true if you've guessed 7 wrong letters or more"
-  // DOEL FUNCTIE: functie laat true returnen als speler 7 of meer letters verkeerd heeft
-  // DUS if statements
-  // Eentje voor 7 of meer: guesses <= 7
-  // Eentje voor 7 of minder: guesses >= 7
+  // DOEL FUNCTIE: functie geef TRUE ('VERLOREN) als gebruiker 7 of meer letters verkeerd invult
+  // DUS if statements voor aantal/lengte guesses
+  // Eentje voor 7 of meer: aantal verkeerd geraden letters <= 7
+  // Eentje voor 7 of minder: aantal verkeerd geraden letters >= 7
 
-  const letterArray = word.split('');
-
-  for (let index = 0; index < letterArray.length; index++) {
-    const letterInWord = letterArray[index];
-    const letterGuessed = guesses.includes(letterInWord);
-
-    if (letterGuessed.length >= 7) {
-      return false;
-    }
-
-    if (letterGuessed.length <= 7) {
-      return true;
-    }
+let wrongGuesses = guesses.length;
+  if (wrongGuesses >= 7) {
+    return true
   }
-
+  if (wrongGuesses <= 7) {
+    return false
+  }
 }
 
 module.exports = {
