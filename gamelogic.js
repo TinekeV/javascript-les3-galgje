@@ -18,15 +18,12 @@ function displayWordSoFar(word, guesses) {
 }
 
 function isGameWon(word, guesses) {
-  // console.log('WORD:' , word)
-  // console.log('GUESSES:', guesses)
   const wordInLetterArray = word.split('');
 
   for (let index = 0; index < wordInLetterArray.length; index++) {
     const letterInWord = wordInLetterArray[index];
-    //console.log(letterInWord);
     const guessedGameWon = guesses.includes(letterInWord);
-    //console.log(guessedGameWon);
+
     if (!guessedGameWon) {
       return false
     }
@@ -40,9 +37,7 @@ function isGameLost(word, guesses) {
   let count = 0
   for (let i = 0; i < guesses.length; i++) {
     const guessedLetter = guesses[i];
-    //console.log(guessedLetter);
     const totalGuesses = word.includes(guessedLetter)
-    //console.log('WAT WORDT ER GELOGD:', totalGuesses);
 
     if (!totalGuesses) {
       count++;
