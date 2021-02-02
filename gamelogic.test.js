@@ -10,6 +10,7 @@ test("displayWordSoFar should display an underscore followed by a space for each
 
   // ASSERT
   expect(displayedWord).toBe("_ _ _ _ _ _ _ _ _ _ ");
+
 });
 
 test("displayWordSoFar should display the letters guessed so far", () => {
